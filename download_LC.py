@@ -24,7 +24,7 @@ ReqIDl = [0]*len(ralist)
 filel = [0]*len(ralist)
 dl = [False]*len(ralist)
 firstReqID=0000000
-RequestDF = pd.DataFrame(data={'ReqRA':ralist,'ReqDec':declist,'ReqID':ReqID,'file':file,'downloaded':dl})
+RequestDF = pd.DataFrame(data={'ReqRA':ralist,'ReqDec':declist,'ReqID':ReqIDl,'file':filel,'downloaded':dl})
 
 # URL for checking the status of jobs sent by user
 # Note: This webpage only updates once an hour, on the hour
