@@ -91,9 +91,14 @@ while(True):
                                 OutputEnded=cols[7].text.strip()
                                 # Set open loop hooks 
                                 
-      
-            
+      if(len(RequestDF[RequestDF['downloaded']==False].index)>0): 
+          print( "All requests not downloaded, stopping")
+          RequestDF[RequestDF['downloaded']==False].to_csv("./fphot_reqstatus.csv",ignore_index=True)
+          break
+      else:
+          print( "All requests downloaded, stopping")
+          break            
        
             
        
-RequestDF.to_csv("./fphot_reqstatus.csv",ignore_index=False)
+RequestDF.to_csv("./fphot_reqstatus.csv",ignore_index=True)
